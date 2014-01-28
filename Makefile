@@ -57,4 +57,6 @@ clean:
 	rm -f *.png
 	rm -f *.ico
 
-all: initlab-logo.png favicon-152.png favicon-144.png favicon-120.png favicon-114.png favicon-72.png favicon-57.png favicon-32.png favicon-16.png favicon.ico
+favicons: favicon-152.png favicon-144.png favicon-120.png favicon-114.png favicon-72.png favicon-57.png favicon-32.png favicon-16.png favicon.ico
+
+all: initlab-logo.png initlab-logo-wiki.png favicons
