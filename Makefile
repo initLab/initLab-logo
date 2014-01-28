@@ -9,7 +9,7 @@ initlab-logo-wiki.png: initlab-text.png
 	$(MAKE) png WIDTH=125
 	convert -size 160x160 canvas:none initlab-logo-wiki.png
 	composite -gravity East initlab-logo-125.png initlab-logo-wiki.png initlab-logo-wiki.png
-	composite -gravity SouthWest -page 64x63 initlab-text.png initlab-logo-wiki.png initlab-logo-wiki.png
+	composite -gravity SouthWest initlab-text.png initlab-logo-wiki.png initlab-logo-wiki.png
 
 favicon-152.png:
 	$(MAKE) favicon WIDTH=152
