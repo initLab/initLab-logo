@@ -5,6 +5,12 @@ default: all
 initlab-logo.png:
 	$(MAKE) png
 
+initlab-logo-wiki.png: initlab-text.png
+	$(MAKE) png WIDTH=125
+	convert -size 160x160 canvas:none initlab-logo-wiki.png
+	composite -gravity East initlab-logo-125.png initlab-logo-wiki.png initlab-logo-wiki.png
+	composite -gravity SouthWest initlab-text.png initlab-logo-wiki.png initlab-logo-wiki.png
+
 favicon-152.png:
 	$(MAKE) favicon WIDTH=152
 
@@ -36,6 +42,10 @@ favicon:
 	$(MAKE) png WIDTH=$(WIDTH)
 	convert initlab-logo-$(WIDTH).png -gravity center -background None -extent $(WIDTH)x$(WIDTH) favicon-$(WIDTH).png
 
+initlab-text.png:
+	inkscape -e initlab-text.png -y 0 -w 110 initlab-text.svg
+	convert initlab-text.png -gravity NorthEast -background None -extent 115x25 initlab-text.png
+
 png:
 ifndef WIDTH
 	inkscape -e $(FILENAME).png -y 0 initlab-logo.svg
@@ -47,4 +57,6 @@ clean:
 	rm -f *.png
 	rm -f *.ico
 
-all: initlab-logo.png favicon-152.png favicon-144.png favicon-120.png favicon-114.png favicon-72.png favicon-57.png favicon-32.png favicon-16.png favicon.ico
+favicons: favicon-152.png favicon-144.png favicon-120.png favicon-114.png favicon-72.png favicon-57.png favicon-32.png favicon-16.png favicon.ico
+
+all: initlab-logo.png initlab-logo-wiki.png favicons

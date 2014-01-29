@@ -7,7 +7,8 @@ Makefile
 Dependencies
 ------------
 
-To use the Makefile you will need Inkscape and ImageMagick.
+To use the Makefile you will need Inkscape and ImageMagick. The Wiki logo uses
+the FreeMono font.
 
 Instructions
 ------------
