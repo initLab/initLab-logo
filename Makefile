@@ -11,6 +11,12 @@ initlab-logo-wiki.png: initlab-text.png
 	composite -gravity East initlab-logo-125.png initlab-logo-wiki.png initlab-logo-wiki.png
 	composite -gravity SouthWest initlab-text.png initlab-logo-wiki.png initlab-logo-wiki.png
 
+initlab-logo-openfest.png: initlab-text.png
+	$(MAKE) png WIDTH=125
+	convert -size 170x90 canvas:none initlab-logo-openfest.png
+	composite -gravity NorthWest initlab-logo-125.png initlab-logo-openfest.png initlab-logo-openfest.png
+	composite -gravity SouthEast initlab-text.png initlab-logo-openfest.png initlab-logo-openfest.png
+
 favicon-152.png:
 	$(MAKE) favicon WIDTH=152
 
@@ -59,4 +65,4 @@ clean:
 
 favicons: favicon-152.png favicon-144.png favicon-120.png favicon-114.png favicon-72.png favicon-57.png favicon-32.png favicon-16.png favicon.ico
 
-all: initlab-logo.png initlab-logo-wiki.png favicons
+all: initlab-logo.png initlab-logo-wiki.png initlab-logo-openfest.png favicons
